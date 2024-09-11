@@ -35,6 +35,13 @@ else()
     message(STATUS "OpenBLAS native build")
 endif()
 
+#In case other targets are desired, allow specifying them via features (?)
+if(VCPKG_CROSSCOMPILING)
+    if(VCPKG_TARGET_ARCHITECTURE STREQUAL "x64")
+        list(APPEND COMMON_OPTIONS -DTARGET=HASWELL)
+    endif()
+endif()
+
 if(VCPKG_TARGET_IS_EMSCRIPTEN)
     # Only the riscv64 kernel with riscv64_generic target is supported.
     # Cf. https://github.com/OpenMathLib/OpenBLAS/issues/3640#issuecomment-1144029630 et al.
