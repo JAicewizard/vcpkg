@@ -39,6 +39,9 @@ if(USE_THREAD)
     list(APPEND OPTIONS -DNUM_THREADS=512)
 endif()
 
+list(APPEND OPTIONS -DUSE_OPENMP=1)
+
+
 #In case other targets are desired, allow specifying them via features (?)
 if(VCPKG_CROSSCOMPILING)
     if(VCPKG_TARGET_ARCHITECTURE STREQUAL "x64")
