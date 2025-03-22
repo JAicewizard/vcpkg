@@ -34,11 +34,15 @@ elseif(VCPKG_CROSSCOMPILING)
 else()
     message(STATUS "OpenBLAS native build")
 endif()
+    
+if(USE_THREAD)
+    list(APPEND OPTIONS -DNUM_THREADS=512)
+endif()
 
 #In case other targets are desired, allow specifying them via features (?)
 if(VCPKG_CROSSCOMPILING)
     if(VCPKG_TARGET_ARCHITECTURE STREQUAL "x64")
-        list(APPEND COMMON_OPTIONS -DTARGET=HASWELL)
+        list(APPEND OPTIONS -DTARGET=HASWELL)
     endif()
 endif()
 
