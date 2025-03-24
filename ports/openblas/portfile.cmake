@@ -14,6 +14,7 @@ vcpkg_from_github(
 vcpkg_check_features(OUT_FEATURE_OPTIONS OPTIONS
     FEATURES
         threads        USE_THREAD
+		openmp         USE_OPENMP
         simplethread   USE_SIMPLE_THREADED_LEVEL3
         dynamic-arch   DYNAMIC_ARCH
 )
@@ -33,20 +34,6 @@ elseif(VCPKG_CROSSCOMPILING)
     message(STATUS "OpenBLAS cross build, may not be able to use getarch")
 else()
     message(STATUS "OpenBLAS native build")
-endif()
-    
-if(USE_THREAD)
-    list(APPEND OPTIONS -DNUM_THREADS=512)
-endif()
-
-list(APPEND OPTIONS -DUSE_OPENMP=1)
-
-
-#In case other targets are desired, allow specifying them via features (?)
-if(VCPKG_CROSSCOMPILING)
-    if(VCPKG_TARGET_ARCHITECTURE STREQUAL "x64")
-        list(APPEND OPTIONS -DTARGET=HASWELL)
-    endif()
 endif()
 
 if(VCPKG_TARGET_IS_EMSCRIPTEN)
