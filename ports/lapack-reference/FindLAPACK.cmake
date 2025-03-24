@@ -487,7 +487,7 @@ if(BLAS_FOUND)
         LAPACK
         cheev
         ""
-        "lapack;m;gfortran;quadmath"
+        "lapack;m;gfortran"
         ""
         ""
         ""
