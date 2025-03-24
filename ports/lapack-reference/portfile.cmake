@@ -36,7 +36,7 @@ if("cblas" IN_LIST FEATURES)
         message(FATAL_ERROR "Cannot built feature 'cblas' together with feature 'noblas'. cblas requires blas!")
     endif()
 else()
-	list(APPEND OPTIONS "-DINDEX64_EXT_API_DEFAULT=OFF")
+	list(APPEND OPTIONS "-DBUILD_INDEX64_EXT_API=OFF")
 endif()
 
 set(USE_OPTIMIZED_BLAS OFF)
@@ -60,6 +60,7 @@ endif()
 vcpkg_cmake_configure(
     SOURCE_PATH "${SOURCE_PATH}"
     OPTIONS
+		"${OPTIONS}"
         "-DUSE_OPTIMIZED_BLAS=${USE_OPTIMIZED_BLAS}"
         "-DCMAKE_REQUIRE_FIND_PACKAGE_BLAS=${USE_OPTIMIZED_BLAS}"
         "-DCBLAS=${CBLAS}"
