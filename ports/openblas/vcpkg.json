@@ -23,6 +23,9 @@
       "description": "Support for multiple targets in a single library",
       "supports": "!windows | mingw"
     },
+    "openmp": {
+      "description": "Build blas to play nice with openmp. Can prevent threading issues when using openmp. Requires linking to openmp."
+    },
     "simplethread": {
       "description": [
         "Use simple thread safety for level3 functions",

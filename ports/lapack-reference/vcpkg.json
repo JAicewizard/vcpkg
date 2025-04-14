@@ -1,7 +1,6 @@
 {
   "name": "lapack-reference",
-  "version": "3.11.0",
-  "port-version": 7,
+  "version": "3.12.1",
   "description": "LAPACK - Linear Algebra PACKage",
   "homepage": "https://netlib.org/lapack/",
   "license": "BSD-3-Clause-Open-MPI",
@@ -41,7 +40,7 @@
     },
     "noblas": {
       "description": "Use external optimized BLAS",
-      "supports": "!windows | !static",
+      "supports": "!windows | !static | mingw",
       "dependencies": [
         "blas"
       ]
