@@ -11,6 +11,7 @@
       "features": [
         "cblas"
       ],
+      "default-features": false,
       "platform": "!osx & !ios & !uwp & !(windows & arm) & windows & static & !mingw"
     },
     {
