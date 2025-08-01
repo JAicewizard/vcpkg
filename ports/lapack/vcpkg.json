@@ -13,6 +13,7 @@
     },
     {
       "name": "lapack-reference",
+      "default-features": false,
       "platform": "!osx & !ios & !uwp & !(arm & windows)"
     },
     {
