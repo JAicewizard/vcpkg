@@ -8,10 +8,10 @@
   "dependencies": [
     {
       "name": "lapack-reference",
+      "default-features": false,
       "features": [
         "cblas"
       ],
-      "default-features": false,
       "platform": "!osx & !ios & !uwp & !(windows & arm) & !(windows & static) & windows & static & !mingw"
     },
     {
