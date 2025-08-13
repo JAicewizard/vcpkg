@@ -9,12 +9,12 @@
   "dependencies": [
     {
       "name": "clapack",
-      "platform": "uwp | (arm & windows)"
+      "platform": "uwp | (arm & windows) | (static & windows)"
     },
     {
       "name": "lapack-reference",
       "default-features": false,
-      "platform": "!osx & !ios & !uwp & !(arm & windows)"
+      "platform": "!osx & !ios & !uwp & !(arm & windows) & !(static & windows)"
     },
     {
       "name": "vcpkg-cmake",
